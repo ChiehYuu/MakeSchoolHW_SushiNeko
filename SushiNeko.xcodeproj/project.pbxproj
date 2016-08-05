@@ -32,6 +32,7 @@
 		69F910621D5454D5003F793C /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F910541D5454D5003F793C /* SKTTimingFunctions.swift */; };
 		69F910631D5454D5003F793C /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F910551D5454D5003F793C /* Vector3.swift */; };
 		69F910651D545B24003F793C /* SushiPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F910641D545B24003F793C /* SushiPiece.swift */; };
+		69F910671D546572003F793C /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69F910661D546572003F793C /* Character.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		69F910541D5454D5003F793C /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		69F910551D5454D5003F793C /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
 		69F910641D545B24003F793C /* SushiPiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SushiPiece.swift; sourceTree = "<group>"; };
+		69F910661D546572003F793C /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				69F910461D5454D5003F793C /* Utils */,
 				69F910111D543192003F793C /* AppDelegate.swift */,
 				69F910131D543192003F793C /* GameScene.sks */,
+				69F910661D546572003F793C /* Character.swift */,
 				69F910151D543192003F793C /* GameScene.swift */,
 				69F910641D545B24003F793C /* SushiPiece.swift */,
 				69F910171D543192003F793C /* GameViewController.swift */,
@@ -355,6 +358,7 @@
 				69F910651D545B24003F793C /* SushiPiece.swift in Sources */,
 				69F910581D5454D5003F793C /* CGFloat+Extensions.swift in Sources */,
 				69F910561D5454D5003F793C /* MSButtonNode.swift in Sources */,
+				69F910671D546572003F793C /* Character.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
