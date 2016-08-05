@@ -8,7 +8,19 @@
 
 import SpriteKit
 
+/* Tracking enum for use with character and sushi side */
+enum Side {
+    case Left, Right, None
+}
+
 class GameScene: SKScene {
+    
+    /* Game objects */
+    var sushiBasePiece: SushiPiece!
+    
+    
+    
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")
@@ -17,6 +29,14 @@ class GameScene: SKScene {
         myLabel.position = CGPoint(x:CGRectGetMidX(self.frame), y:CGRectGetMidY(self.frame))
         
         self.addChild(myLabel)
+        
+        /* Connect game objects */
+        sushiBasePiece = childNodeWithName("sushiBasePiece") as! SushiPiece
+        
+        /* Setup chopstick connections */
+        sushiBasePiece.connectChopsticks()
+        
+    
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
