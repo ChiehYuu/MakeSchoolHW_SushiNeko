@@ -50,25 +50,45 @@ class GameScene: SKScene {
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-       /* Called when a touch begins */
+        /* Called when a touch begins */
         
         for touch in touches {
+            /* Get touch position in scene */
             let location = touch.locationInNode(self)
             
-            let sprite = SKSpriteNode(imageNamed:"Spaceship")
             
-            sprite.xScale = 0.5
-            sprite.yScale = 0.5
-            sprite.position = location
             
-            let action = SKAction.rotateByAngle(CGFloat(M_PI), duration:1)
+            /* Was touch on left/right hand side of screen? */
+            if location.x > size.width / 2 {
+                character.side = .Right
+            } else {
+                character.side = .Left
+            }
             
-            sprite.runAction(SKAction.repeatActionForever(action))
             
-            self.addChild(sprite)
+            /* Grab sushi piece on top of the base sushi piece, it will always be 'first' */
+            let firstPiece = sushiTower.first as SushiPiece!
+            
+            /* Remove from sushi tower array */
+            sushiTower.removeFirst()
+            
+            /* Animate the punched sushi piece */
+            firstPiece.flip(character.side)
+            
+            
+            /* Add a new sushi piece to the top of the sushi tower */
+            addRandomPieces(1)
+            
+            /* Drop all the sushi pieces down one place */
+            for node:SushiPiece in sushiTower {
+                node.runAction(SKAction.moveBy(CGVector(dx: 0, dy: -55), duration: 0.10))
+                
+                /* Reduce zPosition to stop zPosition climbing over UI */
+                node.zPosition -= 1
+            }
         }
     }
-   
+    
     override func update(currentTime: CFTimeInterval) {
         /* Called before each frame is rendered */
     }
